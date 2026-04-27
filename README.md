@@ -1,5 +1,3 @@
-(ITEM MODIFICADO)
-
 # cicd-example
 
 API REST de tarefas em **Express + TypeScript** usada como projeto base de **CI/CD**.
