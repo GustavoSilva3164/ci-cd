@@ -1,0 +1,28 @@
+# nome da branch
+name: CI
+
+# Regras
+on:
+  
+  pull_request: # regra: quando for feito um pull request
+    branches: # em qual branches?
+    - develop
+
+
+jobs: # trabalhos a serem executados
+  test: # trabalho test
+    runs-on: ubuntu-latest # maquina: lunux ubuntu
+    steps: # passos a serem executados
+      - name: checkout do código
+        uses: action/checkout@v4
+
+      - name: instalar o node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: instalar dependências
+        run: npm install
+
+      - name: rodar os testes
+        run: npm test
